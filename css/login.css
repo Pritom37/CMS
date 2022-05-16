@@ -10,43 +10,53 @@
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-body {
-    background:	fef1d2;
-}
 .wrapper{
-    padding: 1%;
-    width: 80%;
+    padding: 10px;
     margin: 0 auto;
+    position: relative;
 }
 .text-center{
     text-align: center;
 }
 .clearfix{
     float: none;
-    clear: left;
+    clear: both;
 
 }
 
 /* Admin Section */
 .adminHead{
-    background-color:#dfe4ea ;
-     color: #ff6b81;
+    color: #ff6b81;
     padding: 1%;
    
 }
 /* CSS for Table > Admin Section*/
 .tbl-full{
+    width: inherit;
+}
+.tblWrapper {
     width: 100%;
+    overflow-y: scroll;
+}
+
+.main-content h1 {
+    text-align: center;
+    color: #ff4757;
 }
 
 table tr th{
     border-bottom: 1px solid black;
-    padding: 1%;
-    text-align: left;
+    padding:10px;
+    text-align: center;
 }
 table tr td{
-    padding: 1%;
+    padding: 5px;
+    text-align: center;
+    white-space: none;
+
+}
+td a {
+    white-space: nowrap;
 }
 .tbl-30{
     width: 35%;
@@ -59,6 +69,7 @@ table tr td{
     text-decoration: none;
     font-weight: bold;
     transition: 1s;
+    margin: 5px;
 }
 .btn-primary:hover{
     background-color: #04b64e;
@@ -71,6 +82,7 @@ table tr td{
     text-decoration: none;
     font-weight: bold;
     transition: 1s;
+    margin: 5px;
 }
 .btn-secondary:hover{
     background-color: #ff6348;
@@ -104,52 +116,99 @@ table tr td{
 
 /* CSS for Menu */
 .menu{
-    /* background-color: #e0ced2; */
-    width: 80%;
-    margin: 0 auto;
-    padding: 0%;
+     position: relative;
 }
 .menu ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     gap: 5px;
+    justify-content: center;
+   
 }
-.menu ul li{
-    font-size: 20px;
+.menu ul li {
+    padding: 8px;
 }
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
-    color: #ff6b81;
-    background-color: #dfe4ea;
-    transition: 0.3s;
-     padding: 5px 10px; 
+    color: #ff4757;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: 0.5s;
 }
 .menu ul li a:hover{
     color: #dfe4ea;
-    background-color: #ff6b81;
+    background-color: #ff4757;
+    border-radius: 3px;
 }
+.menu ul li button:hover{
+    color: #dfe4ea;
+    background-color: #ff4757;
+    border-radius: 3px;
+}
+.menu > .wrapper {
+    width: 90%;
+    margin-top: 10px;
+    background: #00000020;
+    border-radius: 5px;
+}
+
+.userName {
+    background-color: #00000010 !important;
+}
+
+
+
 /* CSS for Main Content */
 .main-content{
     margin: 1% 0;
-    color:black;
-    padding: 3% 0;
-    
+    padding: 10px 15px;
+}
+.main-content > .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 .col-4{
-    width: 18%;
-    background-color:FF6B6B;
-    margin: 1%;
-    padding: 2%;
-    float: left;
+    background-color:rgba(57, 186, 147, 0.15);
+    min-width: 250px;
+    aspect-ratio: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.col-4:hover {
+    background-color:rgba(57, 186, 147, 0.25);
     
+}
+tr td {
+    min-width: 120px;
+    line-height: 30px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+tr td input {
+    height: 30px;
+    min-width: 200px;
+
+}
+.form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.wrapper .btn-secondary {
+    position: absolute;
+left: 25px;
+top: 0;
 }
 /* CSS for Footer */
 .footer{
-    background-color: #ff4757!important;
+    background-color: #ff4757;
     color: white;
 }
 .biddut a{
@@ -188,5 +247,6 @@ table tr td{
 }
 .midtable tr td{
     margin: 2%;
-}
+    
 
+}

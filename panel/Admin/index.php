@@ -7,27 +7,69 @@
 
           <div class="col-4 text-center">
               <h1>Admin</h1></br>
-              Catagories
+              
+              <?php 
+                $sqladmin = "SELECT * FROM tbl_user WHERE user_type='admin'";
+                $resadmin = mysqli_query($conn,$sqladmin);
+                if($resadmin==TRUE)
+                {
+                    $countadmin = mysqli_num_rows($resadmin);
+                    echo $countadmin;
+                }else{
+                    echo "No Data Available";
+                }
+            ?>
           </div>
 
           <div class="col-4 text-center">
               <h1>Teacher</h1></br>
-              Catagories
+              <?php 
+                $sqlteacher = "SELECT * FROM tbl_user WHERE user_type='teacher'";
+                $resteacher = mysqli_query($conn,$sqlteacher);
+                if($resteacher==TRUE)
+                {
+                    $countteacher = mysqli_num_rows($resteacher);
+                    echo $countteacher;
+                }else{
+                    echo "No Data Available";
+                }
+            ?>
           </div>
 
           <div class="col-4 text-center">
               <h1>Staff</h1></br>
-              Catagories
+              <?php 
+                $sqlstaff = "SELECT * FROM tbl_user WHERE user_type='staff'";
+                $resstaff = mysqli_query($conn,$sqlstaff);
+                if($resstaff==TRUE)
+                {
+                    $countstaff = mysqli_num_rows($resstaff);
+                    echo $countstaff;
+                }else{
+                    echo "No Data Available";
+                }
+            ?>
           </div>
 
           <div class="col-4 text-center">
               <h1>Student</h1></br>
-              Catagories
+              <?php 
+                $sqlstudent = "SELECT * FROM tbl_user WHERE user_type='student'";
+                $resstudent = mysqli_query($conn,$sqlstudent);
+                if($resstudent==TRUE)
+                {
+                    $countstudent = mysqli_num_rows($resstudent);
+                    echo $countstudent;
+                }else{
+                    echo "No Data Available";
+                }
+            ?>
+              
           </div>
           
           <div class="col-4 text-center">
               <h1>Courses</h1></br>
-              Catagories
+              5
           </div>
           
           <div class="clearfix"></div>
@@ -35,6 +77,4 @@
      
     </div>
     <!-- Main content Section End -->
-        <!-- Footer Part Starts --->
-<?php include('C:/xampp/htdocs/cms/panel/Admin/partials/footer.php');?>
-        <!-- Footer Part Ends --->
+     

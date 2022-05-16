@@ -1,11 +1,11 @@
 
-<?php include('C:/xampp/htdocs/cms/panel/Admin/UserManage/user-manage.php');?>
+<?php include('C:/xampp/htdocs/cms/panel/Admin/partials/menu.php');?>
+
         <!-- Header Part Ends --->
  <!-- Main Content Section Starts --->
  <div class="main-content">
-        <div class="wrapper">
-
-            <h1>Manage Admin</h1>
+     
+ <h1>Manage Admin</h1>
          <br>  </br>
          <?php
             // If we fail it will show the value that it failed
@@ -18,7 +18,10 @@
          <br>
 
     <!-- Button to Add Admin Starts-->
-    <br><a href="add-admin.php" class="btn-secondary">Add Admin</a> <br><br>
+    <br><a href="add-admin.php" class="btn-secondary">Add Admin</a>  <br>  <br>
+    
+        <div class="tblwrapper">
+
     <!-- Button to Add Admin  Ends-->
             <table class="tbl-full">
                 <tr>
@@ -29,8 +32,8 @@
                     <th>Actions</th>
                 </tr>
                 <?php 
-                // query to get all admin from tbl-admin
-                $sql = "SELECT * FROM tbl_user";
+                // query to get all admin from tbl-user
+                $sql = "SELECT * FROM tbl_user WHERE user_type='admin'";
                 //Execute the query
                 $res = mysqli_query($conn,$sql);
                 //Check whether the query is executed or not
@@ -64,9 +67,9 @@
                     <td><?php  if($user_type=="admin"){echo $email; }?></td>
                     <td><?php  if($user_type=="admin"){echo $user_type; }?></td>
                     <td>
-                    <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-primary">Update Admin</a>
+                    <a href="<?php echo SITEURL; ?>panel/Admin/update-admin.php?id=<?php echo $id; ?>" class="btn-primary">Update Admin</a>
                         <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-third">Change Password</a>
-                        <a href="<?php echo SITEURL; ?>panel/Admin/UserManage/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a> 
+                        <a href="<?php echo SITEURL; ?>panel/Admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a> 
                     </td>
                 </tr>
                             <!-- Html Part Starts for Table -->

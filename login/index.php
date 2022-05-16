@@ -1,4 +1,4 @@
-<?php include('C:/xampp/htdocs/cms/config/constants.php');?>
+ <?php include('C:/xampp/htdocs/cms/config/constants.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

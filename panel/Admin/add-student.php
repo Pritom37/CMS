@@ -1,5 +1,6 @@
 <!-- Header Part Starts --->
-<?php include('C:/xampp/htdocs/cms/panel/Admin/UserManage/user-manage.php');?>
+<?php include('C:/xampp/htdocs/cms/panel/Admin/partials/menu.php');?>
+
         <!-- Header Part Ends --->
         <div class="main-content">
     <div class="wrapper">
@@ -9,6 +10,18 @@
     if(isset($_SESSION['add'])){ //Checking whether the Session is set or not
         echo $_SESSION['add']; // Displaying Session Message
         unset($_SESSION['add']); // Removing Session Message
+    }
+    if(isset($_SESSION['delete'])){
+        echo $_SESSION['delete'];
+        unset($_SESSION['delete']);
+    }
+    if(isset($_SESSION['update'])){
+        echo $_SESSION['update']; 
+        unset($_SESSION['update']);
+    }
+    if(isset($_SESSION['user-not-found'])){
+        echo $_SESSION['user-not-found']; 
+        unset($_SESSION['user-not-found']);
     }
 ?>
 <br>
@@ -31,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>User Type : </td>
-                    <td><input type="text" name="user_type" placeholder="Enter User_Type"value="student"></td>
+                    <td><p>Student</p></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -52,21 +65,20 @@
 //Process the Value from Form and Save it in Database
 //Check Whether the submit button is clicked or not ?
 if(isset($_POST['submit']))
-{
+ {
     //Button Clicked
     //To check ==>> echo "Buttton Clicked";
     //1.Get the data from Form
     $username = $_POST['username'];
     $password = $_POST['password']; //Password Encryption with MD5
     $email = ($_POST['email']);
-    $user_type=($_POST['user_type']);
 
     //2.SQL query to save the data into the Database
     $sql = "INSERT INTO tbl_user SET
         username='$username',
         password='$password',
         email='$email',
-        user_type='$user_type'
+        user_type='student'
 
     ";
 
@@ -81,14 +93,14 @@ $res = mysqli_query($conn, $sql) or die(mysqli_error());
         //Create a session variable to display message .here add is a SESSION variable .
         $_SESSION['add']="<p class='btn-primary'>Student Added Successfully</p>";
         //Redirect Page to Manage Admin. A dot(.) is used to concatenate string value
-        header("location:".SITEURL.'panel/Admin/UserManage/StudentManage.php');
+        header("location:".SITEURL.'panel/Admin/StudentManage.php');
     } else{
         //Failed to insert Data
         //echo "Failed to insert Data";
         //Create a session variable to display message
         $_SESSION['add']="<p class='btn-danger'>Failed To Add Student</p>";
         //Redirect Page to Manage Admin. A dot(.) is used to concatenate string value
-        header("location:".SITEURL.'panel/Admin/UserManage/StudentManage.php');
+        header("location:".SITEURL.'panel/Admin/StudentManage.php');
     }
 
 }

@@ -19,14 +19,14 @@
         //2.2.1:Create Session Variable to Display Message
         $_SESSION['delete'] = "<p class='btn-primary'>Admin Deleted Successfully</p>";
         //2.2.2: Redirect to Manage Admin Page
-        header('location:'.SITEURL.'panel/Admin/UserManage/AdminManage.php');
+        header('location:'.SITEURL.'panel/Admin/AdminManage.php');
     } else {
         //Failed to delete admin
         //echo "Admin Deletion Failed";
         //2.2.1:Create Session Variable to Display Message
         $_SESSION['delete'] = "<p class='btn-danger'>Admin Deletion Failed , Try Again Later</p>";
         //2.2.2: Redirect to Manage Admin Pages
-        header('location:'.SITEURL.'panel/Admin/UserManage/AdminManage.php');
+        header('location:'.SITEURL.'panel/Admin/AdminManage.php');
     }
     //3.Redirect to Manage Admin Page With Message(Success or error)
 ?>
